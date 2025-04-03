@@ -90,7 +90,8 @@ $(document).ready(() => {
     }
 
     function loadTeacherSchedule(staffId, week) {
-        $.getJSON(`/api/teacherSchedule?staffId=${staffId}&week=${week}`, (response) => {
+        $.getJSON(`/api/teachersSchedule?staffId=${staffId}&week=${week}`, (response) => {
+            console.log(response, 1)
             renderTeacherSchedule(response.teacherName, response.dates, response.schedule);
             updateCurrentWeekDisplay(week);
             updateNavigationButtons(week);
